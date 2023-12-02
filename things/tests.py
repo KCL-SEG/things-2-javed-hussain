@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .forms import ThingsForm
+from .forms import ThingForm
 from django import forms
 
 class ThingsFormTest(TestCase):
@@ -10,12 +10,12 @@ class ThingsFormTest(TestCase):
             'quantity' : '10',
         }
     def test_valid_sign_up_form(self):
-        form = ThingsForm(data = self.form_input)
+        form = ThingForm(data = self.form_input)
 
         self.assertTrue(form.is_valid())
 
     def test_form_has_neccesary_feilds(self):
-        form = ThingsForm()
+        form = ThingForm()
         self.assertIn("name", form.fields)
         self.assertIn("description", form.fields)
         description_widget = form.fields['description'].widget

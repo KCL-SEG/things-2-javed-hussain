@@ -2,7 +2,7 @@ from django import forms
 from .models import Thing
 from django.core.validators import MinValueValidator, MaxValueValidator
 
-class ThingsForm(forms.ModelForm):
+class ThingForm(forms.ModelForm):
     class Meta:
         model = Thing
         fields = ['name', 'description', 'quantity']
